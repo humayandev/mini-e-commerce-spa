@@ -16,7 +16,7 @@ const CartPage = () => {
     (sum, item) => sum + item.price * item.quantity,
     0
   );
-  const vatRate = 0.15; // 15% VAT example
+  const vatRate = 0.15; // 15% VAT
   const vat = subtotal * vatRate;
   const grandTotal = subtotal + vat;
 
@@ -117,12 +117,7 @@ const CartPage = () => {
               <span>Grand Total:</span>
               <span>${grandTotal.toFixed(2)}</span>
             </div>
-            {/* <button
-              onClick={() => alert("Checkout simulated")}
-              className="mt-4 w-full px-6 py-3 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
-            >
-              Checkout
-            </button> */}
+            
             <Link
               to="/checkout"
               className="block text-center mt-4 w-full px-6 py-3 bg-green-600 text-white rounded hover:bg-green-700 transition"
