@@ -2,7 +2,7 @@
 
 ### Brief Description
 #### Features added - Homepage (dummy 6 products only), Products details, cart sidebar, checkout as per instructions.
-#### Features not added - login systems, authentication, payment integration.
+#### Features not added - login systems, authentication, payment integration, Shop, About, Contact menu created but not added any design.
 
 ### How to run locally
 #### clone repository and run below command
