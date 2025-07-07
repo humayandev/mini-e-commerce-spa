@@ -1,13 +1,14 @@
-import React from 'react';
-import { useCart } from '../context/CartContext';
-import products from '../data/products'; // adjust path as needed
+import React from "react";
+import { useCart } from "../context/CartContext";
+import products from "../data/products"; // adjust path as needed
+import { Link } from "react-router-dom";
 
 const CartPage = () => {
   const { state, dispatch } = useCart();
 
   // Create a lookup map for product images by id
   const productImageMap = {};
-  products.forEach(product => {
+  products.forEach((product) => {
     productImageMap[product.id] = product.image;
   });
 
@@ -37,7 +38,7 @@ const CartPage = () => {
           </div>
 
           {/* Cart Items */}
-          {state.cart.map(item => (
+          {state.cart.map((item) => (
             <div
               key={item.id}
               className="grid grid-cols-12 gap-4 items-center border-b py-4"
@@ -63,7 +64,7 @@ const CartPage = () => {
               <div className="col-span-2 flex justify-center items-center gap-2">
                 <button
                   onClick={() =>
-                    dispatch({ type: 'DECREASE_QUANTITY', payload: item.id })
+                    dispatch({ type: "DECREASE_QUANTITY", payload: item.id })
                   }
                   className="w-8 h-8 bg-gray-200 rounded text-xl font-bold"
                   aria-label="Decrease quantity"
@@ -73,7 +74,7 @@ const CartPage = () => {
                 <span className="w-6 text-center">{item.quantity}</span>
                 <button
                   onClick={() =>
-                    dispatch({ type: 'INCREASE_QUANTITY', payload: item.id })
+                    dispatch({ type: "INCREASE_QUANTITY", payload: item.id })
                   }
                   className="w-8 h-8 bg-gray-200 rounded text-xl font-bold"
                   aria-label="Increase quantity"
@@ -91,7 +92,7 @@ const CartPage = () => {
               <div className="col-span-1 text-center">
                 <button
                   onClick={() =>
-                    dispatch({ type: 'REMOVE_FROM_CART', payload: item.id })
+                    dispatch({ type: "REMOVE_FROM_CART", payload: item.id })
                   }
                   className="w-10 h-10 bg-red-600 text-white rounded hover:bg-red-700 transition"
                   aria-label="Remove item"
@@ -116,12 +117,18 @@ const CartPage = () => {
               <span>Grand Total:</span>
               <span>${grandTotal.toFixed(2)}</span>
             </div>
-            <button
-              onClick={() => alert('Checkout simulated')}
+            {/* <button
+              onClick={() => alert("Checkout simulated")}
               className="mt-4 w-full px-6 py-3 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
             >
               Checkout
-            </button>
+            </button> */}
+            <Link
+              to="/checkout"
+              className="block text-center mt-4 w-full px-6 py-3 bg-green-600 text-white rounded hover:bg-green-700 transition"
+            >
+              Checkout
+            </Link>
           </div>
         </>
       )}
