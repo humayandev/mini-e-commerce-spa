@@ -17,3 +17,8 @@ npm run dev
 ```diff
 npm install react-icons
 ```
+
+### install react router dom
+```diff
+npm install react-router-dom@latest
+```
