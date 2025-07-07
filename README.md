@@ -12,3 +12,8 @@ npm install tailwindcss @tailwindcss/vite
 ```diff
 npm run dev
 ```
+
+### icons
+```diff
+npm install react-icons
+```
